@@ -91,7 +91,7 @@ angular.module('barModule', ['permission', 'user'])
 
         // Let's assume this returns a promise that resolves or rejects if session is active
         return User.checkSession();
-      })
+      });
       
     PermissionStore
       // A different example for admin
@@ -110,6 +110,7 @@ angular.module('barModule', ['permission', 'user'])
             // Error with request
             deferred.reject();
           });
+        );
 
         return deferred.promise;
       });
